@@ -43,7 +43,7 @@ keys = [
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key(
@@ -95,11 +95,6 @@ keys = [
     Key([mod], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
 ]
 
-
-# █▀▀ █▀█ █▀█ █░█ █▀█ █▀
-# █▄█ █▀▄ █▄█ █▄█ █▀▀ ▄█
-
-
 groups = [Group(f"{i+1}", label="󰏃") for i in range(8)]
 
 for i in groups:
@@ -126,10 +121,7 @@ for i in groups:
 
 layouts = [
     layout.Columns(
-        margin=[10, 10, 10, 10],
-        border_focus="#1F1D2E",
-        border_normal="#1F1D2E",
-        border_width=0,
+        margin=10, border_focus="#1F1D2E", border_normal="#1F1D2E", border_width=0
     ),
     layout.Max(
         border_focus="#1F1D2E",
@@ -149,19 +141,19 @@ layouts = [
     layout.Matrix(
         border_focus="#1F1D2E",
         border_normal="#1F1D2E",
-        margin=10,
+        margin=4,
         border_width=0,
     ),
     layout.MonadTall(
         border_focus="#1F1D2E",
         border_normal="#1F1D2E",
-        margin=10,
+        margin=4,
         border_width=0,
     ),
     layout.MonadWide(
         border_focus="#1F1D2E",
         border_normal="#1F1D2E",
-        margin=10,
+        margin=4,
         border_width=0,
     ),
     #  layout.RatioTile(),
@@ -191,22 +183,18 @@ def power():
     qtile.cmd_spawn("sh -c ~/.config/rofi/scripts/power")
 
 
-# █▄▄ ▄▀█ █▀█
-# █▄█ █▀█ █▀▄
-
-
 screens = [
     Screen(
         top=bar.Bar(
             [
                 widget.Spacer(
                     length=15,
-                    background="#282738",
+                    background="#0F1212",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/launch_Icon.png",
                     margin=2,
-                    background="#282738",
+                    background="#0F1212",
                     mouse_callbacks={"Button1": power},
                 ),
                 widget.Image(
@@ -216,33 +204,33 @@ screens = [
                     fontsize=24,
                     borderwidth=3,
                     highlight_method="block",
-                    active="#CAA9E0",
-                    block_highlight_text_color="#91B1F0",
-                    highlight_color="#4B427E",
-                    inactive="#282738",
+                    active="#607767",
+                    block_highlight_text_color="#B2BEBC",
+                    highlight_color="#D0DAF0",
+                    inactive="#0F1212",
                     foreground="#4B427E",
-                    background="#353446",
-                    this_current_screen_border="#353446",
-                    this_screen_border="#353446",
-                    other_current_screen_border="#353446",
-                    other_screen_border="#353446",
-                    urgent_border="#353446",
+                    background="#202222",
+                    this_current_screen_border="#202222",
+                    this_screen_border="#202222",
+                    other_current_screen_border="#202222",
+                    other_screen_border="#202222",
+                    urgent_border="#202222",
                     rounded=True,
                     disable_drag=True,
                 ),
                 widget.Spacer(
                     length=8,
-                    background="#353446",
+                    background="#202222",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/1.png",
                 ),
                 widget.Image(
-                    filename="~/.config/qtile/Assets/layout.png", background="#353446"
+                    filename="~/.config/qtile/Assets/layout.png", background="#202222"
                 ),
                 widget.CurrentLayout(
-                    background="#353446",
-                    foreground="#CAA9E0",
+                    background="#202222",
+                    foreground="#607767",
                     fmt="{}",
                     font="JetBrains Mono Bold",
                     fontsize=13,
@@ -253,50 +241,50 @@ screens = [
                 widget.Image(
                     filename="~/.config/qtile/Assets/search.png",
                     margin=2,
-                    background="#282738",
+                    background="#0F1212",
                     mouse_callbacks={"Button1": search},
                 ),
                 widget.TextBox(
                     fmt="Search",
-                    background="#282738",
+                    background="#0F1212",
                     font="JetBrains Mono Bold",
                     fontsize=13,
-                    foreground="#CAA9E0",
+                    foreground="#607767",
                     mouse_callbacks={"Button1": search},
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/4.png",
                 ),
                 widget.WindowName(
-                    background="#353446",
+                    background="#202222",
                     format="{name}",
                     font="JetBrains Mono Bold",
-                    foreground="#CAA9E0",
-                    empty_group_string="Desktop",
                     fontsize=13,
+                    foreground="#607767",
+                    empty_group_string="Desktop",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/3.png",
                 ),
                 widget.Systray(
-                    background="#282738",
+                    background="#0F1212",
                     fontsize=2,
                 ),
                 widget.TextBox(
                     text=" ",
-                    background="#282738",
+                    background="#0F1212",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/6.png",
-                    background="#353446",
+                    background="#202222",
                 ),
                 # widget.Image(
                 # filename='~/.config/qtile/Assets/Drop1.png',
                 # ),
                 # widget.Net(
                 # format=' {up}   {down} ',
-                # background='#353446',
-                # foreground='#CAA9E0',
+                # background='#202222',
+                # foreground='#E5B9C6',
                 # font="JetBrains Mono Bold",
                 # prefix='k',
                 # ),
@@ -305,20 +293,20 @@ screens = [
                 # ),
                 # widget.Spacer(
                 # length=8,
-                # background='#353446',
+                # background='#202222',
                 # ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/Misc/ram.png",
-                    background="#353446",
+                    background="#202222",
                 ),
                 widget.Spacer(
                     length=-7,
-                    background="#353446",
+                    background="#202222",
                 ),
                 widget.Memory(
-                    background="#353446",
+                    background="#202222",
                     format="{MemUsed: .0f}{mm}",
-                    foreground="#CAA9E0",
+                    foreground="#607767",
                     font="JetBrains Mono Bold",
                     fontsize=13,
                     update_interval=5,
@@ -331,32 +319,32 @@ screens = [
                 ),
                 widget.Spacer(
                     length=8,
-                    background="#353446",
+                    background="#202222",
                 ),
                 widget.BatteryIcon(
                     theme_path="~/.config/qtile/Assets/Battery/",
-                    background="#353446",
+                    background="#202222",
                     scale=1,
                 ),
                 widget.Battery(
                     font="JetBrains Mono Bold",
-                    background="#353446",
-                    foreground="#CAA9E0",
-                    format="{percent:2.0%}",
                     fontsize=13,
+                    background="#202222",
+                    foreground="#607767",
+                    format="{percent:2.0%}",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/2.png",
                 ),
                 widget.Spacer(
                     length=8,
-                    background="#353446",
+                    background="#202222",
                 ),
                 # widget.Battery(format=' {percent:2.0%}',
                 # font="JetBrains Mono ExtraBold",
                 # fontsize=12,
                 # padding=10,
-                # background='#353446',
+                # background='#202222',
                 # ),
                 # widget.Memory(format='﬙{MemUsed: .0f}{mm}',
                 # font="JetBrains Mono Bold",
@@ -365,46 +353,46 @@ screens = [
                 # background='#4B4D66',
                 # ),
                 widget.Volume(
-                    font="JetBrainsMono Nerd Font",
+                    font="JetBrains Mono Bold",
+                    fontsize=13,
                     theme_path="~/.config/qtile/Assets/Volume/",
                     emoji=True,
-                    fontsize=13,
-                    background="#353446",
+                    background="#202222",
                 ),
                 widget.Spacer(
                     length=-5,
-                    background="#353446",
+                    background="#202222",
                 ),
                 widget.Volume(
                     font="JetBrains Mono Bold",
-                    background="#353446",
-                    foreground="#CAA9E0",
                     fontsize=13,
+                    background="#202222",
+                    foreground="#607767",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/5.png",
-                    background="#353446",
+                    background="#202222",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/Misc/clock.png",
-                    background="#282738",
+                    background="#0F1212",
                     margin_y=6,
                     margin_x=5,
                 ),
                 widget.Clock(
                     format="%I:%M %p",
-                    background="#282738",
-                    foreground="#CAA9E0",
+                    background="#0F1212",
+                    foreground="#607767",
                     font="JetBrains Mono Bold",
                     fontsize=13,
                 ),
                 widget.Spacer(
                     length=18,
-                    background="#282738",
+                    background="#0F1212",
                 ),
             ],
             30,
-            border_color="#282738",
+            border_color="#0F1212",
             border_width=[0, 0, 0, 0],
             margin=[15, 60, 6, 60],
         ),
@@ -448,20 +436,14 @@ floating_layout = layout.Floating(
 )
 
 
-from libqtile import hook
-
-# some other imports
 import os
 import subprocess
 
 
 # stuff
 @hook.subscribe.startup_once
-def autostart_once():
-    subprocess.run(
-        "~/.config/qtile/autostart_once.sh"
-    )  # path to my script, under my user directory
-    subprocess.call([home])
+def autostart():
+    subprocess.call([os.path.expanduser("~/.config/qtile/autostart_once.sh")])
 
 
 auto_fullscreen = True
