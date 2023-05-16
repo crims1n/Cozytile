@@ -30,7 +30,7 @@ else
 fi 
 
 # Install packages
-paru -Syu base-devel qtile python-psutil pywal-git feh picom-jonaburg-fix dunst zsh starship playerctl brightnessctl alacritty pfetch thunar rofi ranger cava pulseaudio alsa-utils neovim vim git sddm --noconfirm --needed
+paru -Syu base-devel qtile python-psutil pywal-git feh picom-jonaburg-fix dunst zsh starship playerctl brightnessctl alacritty pfetch thunar rofi ranger cava pipewire pipewire-alsa wireplumber pipewire-pulse neovim vim git sddm --noconfirm --needed
 
 # Check and set Zsh as the default shell
 [[ "$(awk -F: -v user="$USER" '$1 == user {print $NF}' /etc/passwd) " =~ "zsh " ]] || chsh -s $(which zsh)
@@ -47,8 +47,6 @@ fi
 [[ "${plugins[*]} " =~ "zsh-syntax-highlighting " ]] || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Make Backup 
-
-
 echo "Backing up the current configs. All the backup files will be available at ~/.cozy.bak"
 mkdir -p ~/.cozy.bak
 
@@ -65,10 +63,6 @@ for folder in .* *; do
     cp -r "$folder" "$HOME"
   fi
 done
-
-
-
-
 
 # Check if SDDM is installed and install if not
 if pacman -Qs sddm > /dev/null; then
@@ -87,4 +81,3 @@ fi
 # Enable and start SDDM
 echo "Enabling and starting SDDM"
 sudo systemctl enable --now sddm
-
