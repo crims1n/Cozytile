@@ -1,9 +1,8 @@
 from libqtile import bar, layout, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, hook, Screen, KeyChord
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
-from libqtile.dgroups import simple_key_binder
-from time import sleep
+import os
+import subprocess
 
 mod = "mod4"
 terminal = "kitty"
@@ -408,15 +407,10 @@ floating_layout = layout.Floating(
     ],
 )
 
-
-import os
-import subprocess
-
-
-# stuff
 @hook.subscribe.startup_once
 def autostart():
-    subprocess.call([os.path.expanduser("~/.config/qtile/autostart_once.sh")])
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
 
 
 auto_fullscreen = True
