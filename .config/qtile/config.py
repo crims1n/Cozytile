@@ -53,12 +53,6 @@ keys = [
         desc="Spawn a command using a prompt widget",
     ),
     Key([mod], "p", lazy.spawn("sh -c ~/.config/rofi/scripts/power"), desc="powermenu"),
-    Key(
-        [mod],
-        "t",
-        lazy.spawn("sh -c ~/.config/rofi/scripts/themes"),
-        desc="theme_switcher",
-    ),
     # C U S T O M
     Key(
         [],
