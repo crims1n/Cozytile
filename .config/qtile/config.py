@@ -34,7 +34,7 @@ keys = [
     Key([mod, "shift"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "shift"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-    Key([mod], "f", lazy.window.toggle_fullscreen()),
+    # Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key(
         [mod, "shift"],
         "Return",
@@ -48,7 +48,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key(
         [mod],
-        "r",
+        "d",
         lazy.spawn("rofi -show drun"),
         desc="Spawn a command using a prompt widget",
     ),
@@ -90,7 +90,7 @@ keys = [
         lazy.spawn("brightnessctl s 10%-"),
         desc="brightness Down",
     ),
-    Key([mod], "e", lazy.spawn("thunar"), desc="file manager"),
+    Key([mod], "f", lazy.spawn("thunar"), desc="file manager"),
     Key([mod], "h", lazy.spawn("roficlip"), desc="clipboard"),
     Key([mod], "s", lazy.spawn("flameshot gui"), desc="Screenshot"),
 ]
@@ -223,7 +223,7 @@ screens = [
                     background="#202222",
                 ),
                 widget.Image(
-                    filename="~/.config/qtile/Assets/1.png",
+                    filename="~/.config/qtile/Assets/2.png",
                 ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/layout.png", background="#202222"
@@ -236,24 +236,7 @@ screens = [
                     fontsize=13,
                 ),
                 widget.Image(
-                    filename="~/.config/qtile/Assets/5.png",
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/search.png",
-                    margin=2,
-                    background="#0F1212",
-                    mouse_callbacks={"Button1": search},
-                ),
-                widget.TextBox(
-                    fmt="Search",
-                    background="#0F1212",
-                    font="JetBrains Mono Bold",
-                    fontsize=13,
-                    foreground="#607767",
-                    mouse_callbacks={"Button1": search},
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/4.png",
+                    filename="~/.config/qtile/Assets/2.png",
                 ),
                 widget.WindowName(
                     background="#202222",
@@ -261,10 +244,10 @@ screens = [
                     font="JetBrains Mono Bold",
                     fontsize=13,
                     foreground="#607767",
-                    empty_group_string="Desktop",
+                    empty_group_string="",
                 ),
                 widget.Image(
-                    filename="~/.config/qtile/Assets/3.png",
+                    filename="~/.config/qtile/Assets/5.png",
                 ),
                 widget.Systray(
                     background="#0F1212",
@@ -321,18 +304,6 @@ screens = [
                     length=8,
                     background="#202222",
                 ),
-                widget.BatteryIcon(
-                    theme_path="~/.config/qtile/Assets/Battery/",
-                    background="#202222",
-                    scale=1,
-                ),
-                widget.Battery(
-                    font="JetBrains Mono Bold",
-                    fontsize=13,
-                    background="#202222",
-                    foreground="#607767",
-                    format="{percent:2.0%}",
-                ),
                 widget.Image(
                     filename="~/.config/qtile/Assets/2.png",
                 ),
@@ -370,7 +341,7 @@ screens = [
                     foreground="#607767",
                 ),
                 widget.Image(
-                    filename="~/.config/qtile/Assets/5.png",
+                    filename="~/.config/qtile/Assets/3.png",
                     background="#202222",
                 ),
                 widget.Image(
