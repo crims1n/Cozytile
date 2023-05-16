@@ -246,21 +246,21 @@ screens = [
                     foreground="#607767",
                     empty_group_string="",
                 ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/5.png",
-                ),
-                widget.Systray(
-                    background="#0F1212",
-                    fontsize=2,
-                ),
-                widget.TextBox(
-                    text=" ",
-                    background="#0F1212",
-                ),
-                widget.Image(
-                    filename="~/.config/qtile/Assets/6.png",
-                    background="#202222",
-                ),
+                # widget.Image(
+                #     filename="~/.config/qtile/Assets/5.png",
+                # ),
+                # widget.Systray(
+                #     background="#0F1212",
+                #     fontsize=2,
+                # ),
+                # widget.TextBox(
+                #     text=" ",
+                #     background="#0F1212",
+                # ),
+                # widget.Image(
+                #     filename="~/.config/qtile/Assets/6.png",
+                #     background="#202222",
+                # ),
                 # widget.Image(
                 # filename='~/.config/qtile/Assets/Drop1.png',
                 # ),
@@ -360,6 +360,10 @@ screens = [
                 widget.Spacer(
                     length=18,
                     background="#0F1212",
+                ),
+                widget.Systray(
+                    background="#0F1212",
+                    fontsize=2,
                 ),
             ],
             30,
