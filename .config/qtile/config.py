@@ -198,7 +198,7 @@ screens = [
                     mouse_callbacks={"Button1": power},
                 ),
                 widget.Image(
-                    filename="~/.config/qtile/Assets/6.png",
+                    filename="~/.config/qtile/Assets/4.png",
                 ),
                 widget.GroupBox(
                     fontsize=24,
@@ -358,12 +358,16 @@ screens = [
                     fontsize=13,
                 ),
                 widget.Spacer(
-                    length=18,
+                    length=8,
                     background="#0F1212",
                 ),
                 widget.Systray(
                     background="#0F1212",
                     fontsize=2,
+                ),
+                widget.Spacer(
+                    length=8,
+                    background="#0F1212",
                 ),
             ],
             30,
