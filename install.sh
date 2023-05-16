@@ -30,7 +30,7 @@ else
 fi 
 
 # Install packages
-paru -Syu base-devel qtile python-psutil pywal-git feh picom-jonaburg-fix dunst zsh starship playerctl brightnessctl kitty pfetch thunar rofi ranger cava pipewire pipewire-alsa wireplumber pipewire-pulse neovim vim git sddm --noconfirm --needed
+paru -Syu base-devel qtile python-psutil pywal-git feh picom-jonaburg-fix dunst zsh starship playerctl brightnessctl kitty pfetch thunar rofi ranger cava pipewire pipewire-alsa wireplumber pipewire-pulse neovim vim git sddm alsa-utils --noconfirm --needed
 
 # Check and set Zsh as the default shell
 [[ "$(awk -F: -v user="$USER" '$1 == user {print $NF}' /etc/passwd) " =~ "zsh " ]] || chsh -s $(which zsh)
